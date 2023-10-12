@@ -7,7 +7,11 @@ const moment = require('moment');
 require("dotenv").config();
 
 app.get("/",async (req, res) => {
-	res.send('Server Running Successfully');
+	try{
+		res.sendFile(__dirname + '/index.html');
+	}catch (e) {
+		res.status(500).send({error:e});
+	}
 });
 
 app.get("/generatePDF",async (req, res) => {
@@ -62,8 +66,7 @@ app.get("/generatePDF",async (req, res) => {
 		res.send(pdfBuffer);
 
 	} catch (error) {
-		console.error('Error:', error);
-		res.status(500).send({'Error fetching data from the API': error, message : error.message});
+		res.status(500).send({'error': error, message : error.message});
 	}
 
 });
