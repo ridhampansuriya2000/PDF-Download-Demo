@@ -20,7 +20,7 @@ function App() {
                             borderRadius: '20px',
                             fontSize: '18px'
                         }}
-                        href={'https://pdf-demo-t0q9.onrender.com/'}
+                        href={'https://pdf-demo-t0q9.onrender.com/generatePDF/'}
                         target='_blank'
                 />
             </div>
