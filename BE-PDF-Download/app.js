@@ -8,7 +8,7 @@ require("dotenv").config();
 
 app.get("/",async (req, res) => {
 	try{
-		res.sendFile(__dirname + '/index.html');
+		res.sendFile(__dirname + '/views/index.html');
 	}catch (e) {
 		res.status(500).send({error:e});
 	}
